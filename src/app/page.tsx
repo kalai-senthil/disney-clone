@@ -7,6 +7,7 @@ import {
   getUpComingMovies,
 } from "@/lib/getMovies";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default async function Home() {
   const upcomingMovies = await getUpComingMovies();
@@ -16,9 +17,15 @@ export default async function Home() {
     <main className="">
       <CarouselBannerWrapper />
       <div className="flex flex-col space-x-2">
-        <MoviesCarousel movies={upcomingMovies} title="Upcoming Movies" />
-        <MoviesCarousel movies={topRatedMovies} title="Top Rated Movies" />
-        <MoviesCarousel movies={popularMovies} title="Popular Movies" />
+        <Suspense>
+          <MoviesCarousel movies={upcomingMovies} title="Upcoming Movies" />
+        </Suspense>
+        <Suspense>
+          <MoviesCarousel movies={topRatedMovies} title="Top Rated Movies" />
+        </Suspense>
+        <Suspense>
+          <MoviesCarousel movies={popularMovies} title="Popular Movies" />
+        </Suspense>
       </div>
     </main>
   );

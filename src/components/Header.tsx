@@ -7,7 +7,7 @@ import GenreDropDown from "./GenreDropDown";
 
 function Header() {
   return (
-    <header className="sticky top-0 z-20 flex p-5 bg-gradient-to-t from-gray-200/0 via-gray-900/25 to-gray-900 justify-between  items-center">
+    <header className="fixed w-full top-0 z-20 flex p-5 bg-gradient-to-t from-gray-200/0 via-gray-900/50 to-gray-900 justify-between  items-center">
       <Link href="/">
         <Image
           alt="Disney logo"
