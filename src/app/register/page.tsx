@@ -3,7 +3,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm, useFormState } from "react-hook-form";
 import * as z from "zod";
-import { loginFormSchema } from "../login/page";
 import { useToast } from "@/components/ui/use-toast";
 import { FetchResult } from "../../../typings";
 import {
@@ -17,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { loginFormSchema } from "@/lib/schema";
 
 function RegisterPage() {
   const router = useRouter();
