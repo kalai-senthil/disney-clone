@@ -16,10 +16,8 @@ import * as z from "zod";
 import { FetchResult } from "../../../typings";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
-export const loginFormSchema = z.object({
-  email: z.string().email("Invalid Email"),
-  password: z.string().min(6).max(15),
-});
+import { loginFormSchema } from "@/lib/schema";
+
 function LoginPage() {
   const router = useRouter();
   const form = useForm<z.infer<typeof loginFormSchema>>({
